@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La roue de la fortune</title>
+    <style>
+        /* Style pour la roue */
+        #wheel{
+            width:300px;
+            height: 300px;
+            background:conic-gradient(
+                #f44336 0 60deg,
+                #9c27b0 60deg 120deg,
+                #2196f3 120deg 180deg,
+                #4caf50 180deg 240deg,
+                #ff9800 240deg 300deg,
+                #ffeb3b 300deg 360deg
+            );
+            border-radius:50%;
+            position: relative;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wheel">Cliquez pour faire tourner la roue</div>
+    <script>
+        const roue = document.getElementById('wheel');
+
+        roue.addEventListener('click',tournoyer);
+
+        function tournoyer(){
+            const degres = Math.floor(Math.random()*360)+720; // Tour complet + du supplément
+            roue.style.transition = 'transform 3s ease-out';
+            roue.style.transform = `rotate(${degres}deg)`;
+
+            setTimeout(() => {
+                // On va arrêter la roue !!!
+                alert('Alerte générale !!!!');
+                const sectionAngle =60; // Angle de chaque section
+                const rotation = degres%360;
+                const resultat = Math.floor(rotation/sectionAngle);
+
+                // Section gagnante:
+                alert('Vous avez gagné :',resultat);
+            },3000);
+        }
+    </script>
+</body>
+</html>

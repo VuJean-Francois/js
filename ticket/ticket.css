@@ -1,0 +1,17 @@
+.scratch-card{
+    width: 300px;
+    height: 200px;
+    background-image: url(ticket.jpg);
+    background-size: cover;
+    position: relative;
+    cursor:grab;
+}
+
+.scratch-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: silver;
+}

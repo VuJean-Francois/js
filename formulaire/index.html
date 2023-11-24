@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Formulaire</title>
+</head>
+<body id="body">
+    <header>
+        <h1>Formulaire D'inscription</h1>
+    </header>
+    <section role="inscription">
+        <h2>Inscription</h2>
+        <p id="message"></p>
+        <form name="inscription" id="inscription" method="POST" action="" onsubmit="return validForm();">
+            <div class="form-group">
+                <label for="civilite">Civilité :</label>
+                <select name="civilite" id="civilite" onchange="verifCivilite();">
+                    <option value="">Sélectionner</option>
+                    <option value="Mme">Madame</option>
+                    <option value="Mr">Monsieur</option>
+                    <option value="Non-binaire">Non-binaire</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age :</label>
+                <input type="number" name="age" id="age" onchange="verifAge();">
+            </div>    
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" placeholder="titi@via.fr" onblur="verifEmail();">
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" name="password" id="password" onkeyup="verifPassword();">
+            </div>
+            <div class="form-group">
+                <label for="password2">Répéter mot de passe :</label>
+                <input type="password" name="password2" id="password2">
+            </div>
+          
+            
+            <button type="submit" name="submit" id="submit">Inscription</button>
+            
+        </form>
+    </section>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

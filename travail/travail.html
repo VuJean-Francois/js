@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecriture dans le dom</title>
+</head>
+<body>
+    <h1>Exercice d'écriture</h1>
+    <div class="form-group">
+        <label for="civilite">Civilité</label>
+        <select name="civilite" id="civilite">
+            <option value="">Sélectionner</option>
+            <option value="Monsieur">Monsieur</option>
+            <option value="Madame">Madame</option>
+            <option value="Autres">Autres</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prenom">
+    </div>
+    <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom" placeholder="Votre nom">
+    </div>
+    <div class="form-group">
+        <label for="enfants">Nombre d'enfants :</label>
+        <select name="enfants" id="enfants">
+            
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="regions">Regions :</label>
+        <select name="regions" id="regions">
+            
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="texte">Votre message :</label>
+        <textarea name="texte" id="texte"></textarea>
+        <p>Vous avez saisie: <span id="nb">0</span> caractères</p>
+    </div>
+    <button type="button" name="coucou" id="bouton">Envoyer</button>
+    <div id="message"></div>
+    <script type="text/javascript" src="travail.js"></script>
+</body>
+</html>

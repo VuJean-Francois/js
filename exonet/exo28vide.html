@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Ecriture d'une fonction simple</h1>
+
+<p>Cliquez sur le bouton pour lancer la fonction&nbsp;: <button onclick="calculSurface();">Lancer la fonction</button></p>
+ <script type="text/javascript">
+    function calculSurface(){
+    let longueur = parseFloat(prompt('Saisissez une longueur'));
+    let largeur = parseFloat(prompt('Saisissez une largueur'));
+    let surface = longueur*largeur;
+
+    alert('la surface est de :'+ surface);
+  }
+  </script>
+</body>
+</html>
