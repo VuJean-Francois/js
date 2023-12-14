@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-color: blanchedalmond;
+            color: brown;
+           
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            margin-bottom: 10px;
+
+        }
+        .form-group{
+        display: flex;
+        flex-direction: column;
+        max-width: 40%;
+        margin: auto;
+        }
+        button{
+            
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Page de connexion</h1>
+    <form name="connexion" id="connexion" method="post" action="login.php">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="name" id="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe:</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="submit" name="submit" id="submit">Se Connecter</button> 
+    </form>
+    <div id="modal"></div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+</body>
+</html>

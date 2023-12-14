@@ -24,7 +24,7 @@
 <body>
     <h1>Formulaire dynamique</h1>
     <div class="message" id="message"></div>
-    <form name="jquery" id="jquery" method="POST" action="">
+    <form name="jquery" id="jquery" method="POST" action="" onsubmit="return verifForm();" enctype="multipart/form-data">
         <div class="form-group">
             <label for="nom">Nom :</label>
             <input type="text" name="nom" id="nom" required>

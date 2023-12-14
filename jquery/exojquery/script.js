@@ -76,7 +76,7 @@ $(document).ready(function(){
         });
           //Au clic sur le bouton submit
         $('#submit').on('click',function(e){
-                e.preventdefault(); //empecher le comportement par defaut du bouton
+                e.preventDefault(); //empecher le comportement par defaut du bouton
                 //on crée l'objet formulaire avec l'ensemble des données
                 let formData = new FormData($('#jquery')[0]);
                 //On va effectuer notre requete Ajax
@@ -84,6 +84,8 @@ $(document).ready(function(){
                         url: 'traitement.php', //Url qui va traiter le formulaire
                         type: 'POST', //le type, GET ou POST
                         data: formData, // les données a envoyer
+                        processData: false, //pour ne pas trainer les données
+                        contentType: false, //pour laiseer le type de donnée par défault
                         //Gestion de la barre de progression
                         xhr: function(){
                                 let xhr = new window.XMLHttpRequest(); //je crée un objet XMLHttpREquest
@@ -93,17 +95,25 @@ $(document).ready(function(){
                                                 //Calculer le pourcentage de progression de l'envoi
                                                 let pourcent = Math.round((e.loaded/e.total)*100);
                                                 $('#barre').attr('value', pourcent); // je met a jour la value de la barre
-                                                $('#status').text(percent+'%'); // on met a jour le span avec le pourcentage
+                                                $('#status').text(pourcent+'%'); // on met a jour le span avec le pourcentage
                                         }
                                 });
                                 return xhr; // je retourne mon objet XMLHttpRequest modifié
                         },
-                        success: function(response){
+                        success : function(response){
                                 $('#message').addClass('success').html('Formulaire envoyé: '+response).show();
                         },
                         //si il ya une erreur
-                        error: function(xhr,status,error){
-                                
+                        error : function(xhr,status,error){
+                                $('#message').addClass('error').html('Une erreur est survenue :'+error).show();
+                        },
+                        //fonction à appeler avant l'envoie de la requète Ajax
+                        beforeSend : function(){
+                                $('#progression').show(); // on affiche la barre de progression
+                        },
+                        //Fonction à appeler une fois la requête terminée, peu importe si success ou error
+                        complete : function(){
+                               // $('#barre').hide(); // On masque la barre de progresse
                         }
                 });
         });
