@@ -1,0 +1,3 @@
+function genererMdp() {
+    let 
+}
